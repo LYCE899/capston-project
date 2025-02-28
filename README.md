@@ -1,3 +1,5 @@
+![creer compte image](https://github.com/user-attachments/assets/68d94ee5-1701-4a0e-9512-06c0ff0ec79d)
+![image commencer](https://github.com/user-attachments/assets/4a8e976e-cc09-4bb9-b7b2-b34301b157b3)
 ﻿# capston-project
 ## Afrimeds: Digitalized Traditional Knowledge
 ### About the Project
