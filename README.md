@@ -3,10 +3,10 @@
 ### About the Project
 Afrimeds is an interactive and multilingual web application dedicated to documenting and preserving traditional medicinal knowledge from Côte d'Ivoire. This project aims to safeguard a rich cultural heritage threatened by rapid urbanization and modernization, by providing a digital platform that documents traditional medicinal plants, their therapeutic uses, and preparation methods.
 Table of Contents
-## Features
+### Features
 ### Technologies Used
-### Installation
-### Project Structure
+#### Installation
+#### Project Structure
 ### Usage
 ### Current Project Status
 ### Future Developments
