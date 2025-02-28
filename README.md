@@ -1,5 +1,3 @@
-![creer compte image](https://github.com/user-attachments/assets/68d94ee5-1701-4a0e-9512-06c0ff0ec79d)
-![image commencer](https://github.com/user-attachments/assets/4a8e976e-cc09-4bb9-b7b2-b34301b157b3)
 ﻿# capston-project
 ## Afrimeds: Digitalized Traditional Knowledge
 ### About the Project
@@ -91,13 +89,13 @@ The application content will automatically be translated into the selected langu
 
 ## Current Project Status
 The current version of Afrimeds includes the following features:
--✅Secure user authentication with Firebase
--✅ Catalog of 8 medicinal plants from Côte d'Ivoire
--✅ Detailed pages for each plant
--✅ Functional comment system for remedies
--✅ Multilingual support (French and English)
--✅ Responsive interface
--✅ Navigation between different sections (Home, Plants, Tips, Remedies, About)
+-Secure user authentication with Firebase
+- Catalog of 8 medicinal plants from Côte d'Ivoire
+- Detailed pages for each plant
+- Functional comment system for remedies
+- Multilingual support (French and English)
+- Responsive interface
+- Navigation between different sections (Home, Plants, Tips, Remedies, About)
 ## Future Developments
 Here are the features planned for upcoming versions:
 -🔄 Interactive quiz section to test users' knowledge
@@ -109,7 +107,12 @@ Here are the features planned for upcoming versions:
 -🔄 Optimization of application performance
 -🔄 Deployment of the application on Firebase Hosting
 
+![image commencer](https://github.com/user-attachments/assets/8f8f97d4-154f-4a51-8baf-1b44a9a4dffc)
+![creer compte image](https://github.com/user-attachments/assets/85a7e881-2db5-4ab5-8a5b-25400142e357)
+![se conecter a sont comptes image](https://github.com/user-attachments/assets/2b096176-4048-4f7b-8911-6f8b52e276e2)
+![image changer la langue](https://github.com/user-attachments/assets/63868b8d-5e0a-482f-ae40-f0e0b55422ad)
+![choix de la page image](https://github.com/user-attachments/assets/d2d57380-d3ac-4d3a-a9cf-3c04c09cb974)
+![plante page image](https://github.com/user-attachments/assets/2985e91d-c3f4-44b4-a379-c180927691eb)
+![remedes page image](https://github.com/user-attachments/assets/67df45b2-9d82-4ffd-bf55-43000ae02218)
 
-
-https://github.com/user-attachments/assets/222930c4-8599-437f-8914-ba732a90979e
 
