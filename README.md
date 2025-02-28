@@ -3,13 +3,13 @@
 ### About the Project
 Afrimeds is an interactive and multilingual web application dedicated to documenting and preserving traditional medicinal knowledge from Côte d'Ivoire. This project aims to safeguard a rich cultural heritage threatened by rapid urbanization and modernization, by providing a digital platform that documents traditional medicinal plants, their therapeutic uses, and preparation methods.
 Table of Contents
-### Features
-### Technologies Used
+#### Features
+#### Technologies Used
 #### Installation
 #### Project Structure
-### Usage
-### Current Project Status
-### Future Developments
+#### Usage
+#### Current Project Status
+#### Future Developments
 ## Features
 - Catalog of traditional medicinal plants from Côte d'Ivoire
 - Detailed plant profiles with medicinal properties
@@ -48,14 +48,14 @@ npm start
 The application will be accessible at http://localhost:5173.
 ## Project Structure
 The project is organized with a navigation bar containing the following sections:
-### Home: Homepage of the application
-### Plants: Catalog of medicinal plants with search function
-### Tips: Practical advice on using medicinal plants
-### Remedies: Documented traditional remedies with comment system
-### Quizzes: Section to test knowledge (in development)
-### About: Information about the project
-### Language selector: Allows switching between French and English
-### Sign Out: Logout button for authenticated users
+##### Home: Homepage of the application
+##### Plants: Catalog of medicinal plants with search function
+##### Tips: Practical advice on using medicinal plants
+##### Remedies: Documented traditional remedies with comment system
+##### Quizzes: Section to test knowledge (in development)
+##### About: Information about the project
+##### Language selector: Allows switching between French and English
+##### Sign Out: Logout button for authenticated users
 Each plant has its own detailed page accessible by clicking on its entry in the plant list.
 ## Usage
 ### Getting Started & Authentication
@@ -89,20 +89,25 @@ The application content will automatically be translated into the selected langu
 
 ## Current Project Status
 The current version of Afrimeds includes the following features:
-✅Secure user authentication with Firebase
-✅ Catalog of 8 medicinal plants from Côte d'Ivoire
-✅ Detailed pages for each plant
-✅ Functional comment system for remedies
-✅ Multilingual support (French and English)
-✅ Responsive interface
-✅ Navigation between different sections (Home, Plants, Tips, Remedies, About)
+-✅Secure user authentication with Firebase
+-✅ Catalog of 8 medicinal plants from Côte d'Ivoire
+-✅ Detailed pages for each plant
+-✅ Functional comment system for remedies
+-✅ Multilingual support (French and English)
+-✅ Responsive interface
+-✅ Navigation between different sections (Home, Plants, Tips, Remedies, About)
 ## Future Developments
 Here are the features planned for upcoming versions:
-🔄 Interactive quiz section to test users' knowledge
-🔄 Improvement of the plant search functionality
-🔄 Increase in the number of documented plants and remedies
-🔄 Addition of local dialects in language options
-🔄 Integration of an interactive map showing the geographical distribution of plants
-🔄 Rating system for remedies by users
-🔄 Optimization of application performance
-🔄 Deployment of the application on Firebase Hosting
+-🔄 Interactive quiz section to test users' knowledge
+-🔄 Improvement of the plant search functionality
+-🔄 Increase in the number of documented plants and remedies
+-🔄 Addition of local dialects in language options
+-🔄 Integration of an interactive map showing the geographical distribution of plants
+-🔄 Rating system for remedies by users
+-🔄 Optimization of application performance
+-🔄 Deployment of the application on Firebase Hosting
+
+
+
+https://github.com/user-attachments/assets/222930c4-8599-437f-8914-ba732a90979e
+
