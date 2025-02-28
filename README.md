@@ -31,7 +31,7 @@ Follow these steps to install and run the project locally:
 
 1.Clone the repository to your local machine
 
-git clone https://github.com/your-name/afrimeds.git
+git clonegh repo clone LYCE899/capston-project
 cd afrimeds
 2. Install dependencies
 npm install
@@ -115,4 +115,5 @@ Here are the features planned for upcoming versions:
 ![plante page image](https://github.com/user-attachments/assets/2985e91d-c3f4-44b4-a379-c180927691eb)
 ![remedes page image](https://github.com/user-attachments/assets/67df45b2-9d82-4ffd-bf55-43000ae02218)
 
-
+## demo for Final version of the product/solution
+[Watch the Afrimeds Demo Video](https://drive.google.com/file/d/1L-xQ1YzE7l86Sp0zeF4_fW-tFwgPGrjz/view?usp=sharing)
