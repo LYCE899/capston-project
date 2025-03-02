@@ -2,6 +2,8 @@
 ## Afrimeds: Digitalized Traditional Knowledge
 ### About the Project
 Afrimeds is an interactive and multilingual web application dedicated to documenting and preserving traditional medicinal knowledge from Côte d'Ivoire. This project aims to safeguard a rich cultural heritage threatened by rapid urbanization and modernization, by providing a digital platform that documents traditional medicinal plants, their therapeutic uses, and preparation methods.
+## GitHub Repository
+[https://github.com/LYCE899/capston-project]
 Table of Contents
 #### Features
 #### Technologies Used
@@ -26,17 +28,14 @@ Table of Contents
 - i18next - For multilingual support (French and English)
 ## Backend:
 - Firebase Firestore - NoSQL database to store plant information and comments
-## Installation
-Follow these steps to install and run the project locally:
 
 ### 1.Clone the repository to your local machine
 
-git clonegh repo clone LYCE899/capston-project
-cd afrimeds
+git clone [(https://github.com/LYCE899/capston-project.git)] cd afrimeds
 
 ### 2. Install dependencies
    
-npm install
+{npm install}
 ### 3.Create a .env file at the root of the project with your Firebase information
 
 REACT_APP_FIREBASE_API_KEY=your-api-key
