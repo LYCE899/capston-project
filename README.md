@@ -29,13 +29,15 @@ Table of Contents
 ## Installation
 Follow these steps to install and run the project locally:
 
-1.Clone the repository to your local machine
+### 1.Clone the repository to your local machine
 
 git clonegh repo clone LYCE899/capston-project
 cd afrimeds
-2. Install dependencies
+
+### 2. Install dependencies
+   
 npm install
-3.Create a .env file at the root of the project with your Firebase information
+### 3.Create a .env file at the root of the project with your Firebase information
 
 REACT_APP_FIREBASE_API_KEY=your-api-key
 REACT_APP_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
@@ -43,19 +45,21 @@ REACT_APP_FIREBASE_PROJECT_ID=your-project-id
 REACT_APP_FIREBASE_STORAGE_BUCKET=your-project.appspot.com
 REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your-sender-id
 REACT_APP_FIREBASE_APP_ID=your-app-id
-4. Launch the application in development mode
-npm start
+
+### 4. Launch the application in development mode
+npm run dev 
 The application will be accessible at http://localhost:5173.
+
 ## Project Structure
 The project is organized with a navigation bar containing the following sections:
-##### Home: Homepage of the application
-##### Plants: Catalog of medicinal plants with search function
-##### Tips: Practical advice on using medicinal plants
-##### Remedies: Documented traditional remedies with comment system
-##### Quizzes: Section to test knowledge (in development)
-##### About: Information about the project
-##### Language selector: Allows switching between French and English
-##### Sign Out: Logout button for authenticated users
+- Home: Homepage of the application
+- Plants: Catalog of medicinal plants with search function
+- Tips: Practical advice on using medicinal plants
+- Remedies: Documented traditional remedies with comment system
+- Quizzes: Section to test knowledge (in development)
+- About: Information about the project
+- Language selector: Allows switching between French and English
+- Sign Out: Logout button for authenticated users
 Each plant has its own detailed page accessible by clicking on its entry in the plant list.
 ## Usage
 ### Getting Started & Authentication
