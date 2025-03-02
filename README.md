@@ -78,11 +78,11 @@ Browse the list of available medicinal plants (currently 8 documented plants)
 Click on a plant to see its detailed page
 ### Remedy Page Structure
 Each remedy page is organized in a clean, intuitive layout:
-######## Image 
+###### Image 
 - Visual representation of the medicinal plant at the top
 Information
 - Detailed description, uses, and preparation methods
-######## Comments Section
+###### Comments Section
 - Located directly below the remedy information where users can:
 Read existing comments from other users
 Add their own comments and feedback
