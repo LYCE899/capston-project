@@ -102,14 +102,14 @@ The current version of Afrimeds includes the following features:
 - Navigation between different sections (Home, Plants, Tips, Remedies, About)
 ## Future Developments
 Here are the features planned for upcoming versions:
--Interactive quiz section to test users' knowledge
--Improvement of the plant search functionality
--Increase in the number of documented plants and remedies
--Addition of local dialects in language options
--Integration of an interactive map showing the geographical distribution of plants
--Rating system for remedies by users
--Optimization of application performance
--Deployment of the application on Firebase Hosting
+- Interactive quiz section to test users' knowledge
+- Improvement of the plant search functionality
+- Increase in the number of documented plants and remedies
+- Addition of local dialects in language options
+- Integration of an interactive map showing the geographical distribution of plants
+- Rating system for remedies by users
+- Optimization of application performance
+- Deployment of the application on Firebase Hosting
 
 ![image commencer](https://github.com/user-attachments/assets/8f8f97d4-154f-4a51-8baf-1b44a9a4dffc)
 ![creer compte image](https://github.com/user-attachments/assets/85a7e881-2db5-4ab5-8a5b-25400142e357)
