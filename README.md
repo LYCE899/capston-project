@@ -35,7 +35,9 @@ Afrimeds is an interactive and multilingual web application dedicated to documen
 
 ### Clone the repository to your local machine
 
-git clone [(https://github.com/LYCE899/capston-project.git)] cd afrimeds
+git clone [(https://github.com/LYCE899/capston-project.git)] 
+
+cd afrimeds;
 
 ### Install dependencies
    - npm install
@@ -129,4 +131,4 @@ Here are the features planned for upcoming versions:
 [Watch the Afrimeds Demo Video](https://drive.google.com/file/d/1L-xQ1YzE7l86Sp0zeF4_fW-tFwgPGrjz/view?usp=sharing)
 
 ## Link to deployed app 
-[(https://capston-project-hb1n.vercel.app/)]
+[https://capston-project-hb1n.vercel.app/]
