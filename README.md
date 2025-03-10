@@ -129,4 +129,4 @@ Here are the features planned for upcoming versions:
 [Watch the Afrimeds Demo Video](https://drive.google.com/file/d/1L-xQ1YzE7l86Sp0zeF4_fW-tFwgPGrjz/view?usp=sharing)
 
 ## Link to deployed app 
-[](https://capston-project-hb1n.vercel.app/)
+[(https://capston-project-hb1n.vercel.app/)]
