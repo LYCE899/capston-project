@@ -110,7 +110,6 @@ Here are the features planned for upcoming versions:
 - Integration of an interactive map showing the geographical distribution of plants
 - Rating system for remedies by users
 - Optimization of application performance
-- Deployment of the application on Firebase Hosting
 
 
 ![image commencer](https://github.com/user-attachments/assets/8f8f97d4-154f-4a51-8baf-1b44a9a4dffc)
@@ -128,3 +127,6 @@ Here are the features planned for upcoming versions:
 
 ## demo for Final version of the product/solution!
 [Watch the Afrimeds Demo Video](https://drive.google.com/file/d/1L-xQ1YzE7l86Sp0zeF4_fW-tFwgPGrjz/view?usp=sharing)
+
+## Link to deployed app 
+[](https://capston-project-hb1n.vercel.app/)
