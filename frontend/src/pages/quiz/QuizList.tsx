@@ -2,18 +2,18 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { getAllQuizzes } from "../services/quizService";
-import { Quiz } from "../types/Quiz";
+import { getAllQuizzes } from "../../services/quizService";
+import { Quiz } from "../../types/Quiz";
 import { BrainCircuit, Award, Clock } from "lucide-react";
 
-export const QuizList: React.FC = () => {
+const QuizList: React.FC = () => {
   const { i18n, t } = useTranslation();
   const [quizzes, setQuizzes] = useState<Quiz[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Langue actuelle
-  const currentLanguage = i18n.language as "en" | "fr";
+  // Current language
+  const currentLanguage = i18n.language === "fr" ? "fr" : "en";
 
   useEffect(() => {
     const fetchQuizzes = async () => {
@@ -23,11 +23,11 @@ export const QuizList: React.FC = () => {
         setQuizzes(fetchedQuizzes);
         setError(null);
       } catch (err) {
-        console.error("Erreur lors du chargement des quiz:", err);
+        console.error("Error loading quizzes:", err);
         setError(
           t(
             "quiz.errorLoading",
-            "Impossible de charger les quiz. Veuillez réessayer plus tard."
+            "Unable to load quizzes. Please try again later."
           )
         );
       } finally {
@@ -38,7 +38,7 @@ export const QuizList: React.FC = () => {
     fetchQuizzes();
   }, [t]);
 
-  // Fonction pour obtenir la couleur du niveau de difficulté
+  // Get difficulty color
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case "easy":
@@ -52,15 +52,17 @@ export const QuizList: React.FC = () => {
     }
   };
 
-  // Fonction pour traduire le niveau de difficulté
+  // Translate difficulty
   const translateDifficulty = (difficulty: string) => {
     switch (difficulty) {
       case "easy":
-        return t("quiz.difficultyEasy", "Facile");
+        return t("quiz.difficultyEasy", "Easy");
       case "medium":
-        return t("quiz.difficultyMedium", "Moyen");
+        return t("quiz.difficultyMedium", "Medium");
       case "hard":
-        return t("quiz.difficultyHard", "Difficile");
+        return t("quiz.difficultyHard", "Hard");
+      case "mixed":
+        return t("quiz.difficultyMixed", "Mixed");
       default:
         return difficulty;
     }
@@ -70,12 +72,12 @@ export const QuizList: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          {t("quiz.pageTitle", "Quiz de connaissances")}
+          {t("quiz.pageTitle", "Knowledge Quizzes")}
         </h1>
         <p className="text-xl text-gray-600">
           {t(
             "quiz.pageDescription",
-            "Testez vos connaissances sur les plantes médicinales africaines"
+            "Test your knowledge about African medicinal plants"
           )}
         </p>
       </div>
@@ -83,7 +85,7 @@ export const QuizList: React.FC = () => {
       {loading ? (
         <div className="flex justify-center py-8">
           <div className="h-8 w-8 text-emerald-600 animate-spin">
-            {t("common.loading", "Chargement...")}
+            {t("common.loading", "Loading...")}
           </div>
         </div>
       ) : error ? (
@@ -106,7 +108,7 @@ export const QuizList: React.FC = () => {
                   </h2>
                 </div>
                 <p className="text-gray-600 mb-4">
-                  {(quiz.explanation as Record<string, string>)[currentLanguage]}
+                  {quiz.description[currentLanguage]}
                 </p>
                 <div className="flex flex-wrap gap-2 mt-4">
                   <span
@@ -131,9 +133,11 @@ export const QuizList: React.FC = () => {
         </div>
       ) : (
         <div className="text-center py-8 text-gray-600">
-          {t("quiz.noQuizzes", "Aucun quiz disponible pour le moment")}
+          {t("quiz.noQuizzes", "No quizzes available at the moment")}
         </div>
       )}
     </div>
   );
 };
+
+export default QuizList;

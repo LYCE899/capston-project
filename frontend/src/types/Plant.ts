@@ -16,13 +16,13 @@ export interface Plant {
   };
   remedies: {
     en: {
-      preparation: string;
-      dosage: string;
+      preparation: string | string[];
+      dosage: string | string[];
       precautions: string[];
     };
     fr: {
-      preparation: string;
-      dosage: string;
+      preparation: string | string[];
+      dosage: string | string[];
       precautions: string[];
     };
   };

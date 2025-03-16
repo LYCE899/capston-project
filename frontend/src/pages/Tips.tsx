@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Video, Image } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { tips } from '../data/tips';
 
 export const Tips: React.FC = () => {
@@ -51,9 +52,17 @@ export const Tips: React.FC = () => {
                   {tip.title[i18n.language as 'en' | 'fr']}
                 </h2>
               </div>
-              <p className="text-gray-600">
-                {tip.description[i18n.language as 'en' | 'fr']}
+              <p className="text-gray-600 mb-4">
+                {tip.description[i18n.language as 'en' | 'fr'].substring(0, 150)}...
               </p>
+              
+              {/* Ajout du bouton de lien vers la page de détail */}
+              <Link
+                to={`/tips/${tip.id}`}
+                className="inline-block px-4 py-2 mt-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition-colors"
+              >
+                {i18n.language === 'en' ? 'Read more' : 'Lire plus'}
+              </Link>
             </div>
           </div>
         ))}

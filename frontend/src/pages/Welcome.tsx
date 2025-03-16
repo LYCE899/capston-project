@@ -16,8 +16,8 @@ export const Welcome: React.FC = () => {
         <h1 className="text-6xl font-bold text-white mb-8">Afrimeds</h1>
         <p className="text-2xl text-emerald-100 mb-12">
           {i18n.language === 'fr' 
-            ? 'Découvrez la médecine traditionnelle africaine'
-            : 'Discover African traditional medicine'}
+            ? 'Découvrez la médecine traditionnelle Ivoirienne'
+            : 'Discover traditional Ivorian medicine'}
         </p>
         <button
           onClick={() => navigate('/signin')}

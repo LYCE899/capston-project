@@ -10,15 +10,14 @@ export interface QuizQuestion {
     fr: string[];
   };
   correctAnswerIndex: number;
-  explanation?: {
+  explanation: {
     en: string;
     fr: string;
   };
-  plantId?: string; // Référence à une plante (optionnel)
+  plantId?: string; // Reference to a plant (optional)
 }
 
 export interface Quiz {
-  explanation: unknown;
   id: string;
   title: {
     en: string;
@@ -29,7 +28,7 @@ export interface Quiz {
     fr: string;
   };
   questions: QuizQuestion[];
-  difficulty: 'easy' | 'medium' | 'hard';
+  difficulty: 'easy' | 'medium' | 'hard' | 'mixed';
   category: string;
   timeInMinutes: number;
 }

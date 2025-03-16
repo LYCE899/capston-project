@@ -1,277 +1,343 @@
 // src/data/quizData.js
 export const quizzes = [
   {
-    id: "quiz1",
+    id: "plants-quiz",
     title: {
-      en: "Discovering African Medicinal Plants",
-      fr: "À la découverte des plantes médicinales africaines"
+      en: "African Medicinal Plants",
+      fr: "Plantes médicinales africaines"
     },
     description: {
-      en: "Test your knowledge about traditional African medicinal plants and their uses",
-      fr: "Testez vos connaissances sur les plantes médicinales traditionnelles africaines et leurs utilisations"
+      en: "Test your knowledge about medicinal plants used in Côte d'Ivoire",
+      fr: "Testez vos connaissances sur les plantes médicinales utilisées en Côte d'Ivoire"
     },
-    difficulty: "mixed",
-    category: "general",
-    timeInMinutes: 10,
+    difficulty: "easy",
+    category: "plants",
+    timeInMinutes: 5,
     questions: [
       {
-        id: "q1",
+        id: "plants-q1",
         question: {
-          en: "Which plant is traditionally called 'Djeka' in Côte d'Ivoire?",
-          fr: "Quelle plante est traditionnellement appelée 'Djéka' en Côte d'Ivoire ?"
+          en: "Which plant is known in Côte d'Ivoire for its effectiveness against malaria?",
+          fr: "Quelle plante est connue en Côte d'Ivoire pour son efficacité contre le paludisme ?"
         },
         options: {
           en: [
-            "Alchornea cordifolia",
-            "Anthocleista nobilis",
-            "Antidesma venosum",
-            "Baphia nitida"
+            "Anthocleista nobilis (Cabbage tree)",
+            "Baphia nitida (Camwood)",
+            "Blighia unijugata (Bébi)",
+            "Bridelia ferruginea (Séa)"
           ],
           fr: [
-            "Alchornea cordifolia",
-            "Anthocleista nobilis",
-            "Antidesma venosum",
-            "Baphia nitida"
+            "Anthocleista nobilis (Arbre chou)",
+            "Baphia nitida (Okoué)",
+            "Blighia unijugata (Bébi)",
+            "Bridelia ferruginea (Séa)"
           ]
         },
         correctAnswerIndex: 0,
         explanation: {
-          en: "Alchornea cordifolia is known as 'Djeka' and is widely used in traditional medicine for intimate hygiene and post-partum care.",
-          fr: "Alchornea cordifolia est connue sous le nom de 'Djéka' et est largement utilisée en médecine traditionnelle pour l'hygiène intime et les soins post-partum."
+          en: "Anthocleista nobilis is traditionally used as an antimalarial thanks to its active compounds with antiparasitic activity. The leaves are boiled and consumed as a decoction to prevent and treat malaria.",
+          fr: "L'Anthocleista nobilis est utilisée traditionnellement comme antipaludéen grâce à ses composés actifs ayant une activité antiparasitaire. Les feuilles sont bouillies et consommées en décoction pour prévenir et traiter le paludisme."
         }
       },
       {
-        id: "q2",
+        id: "plants-q2",
         question: {
-          en: "Which of these medicinal uses is NOT associated with Alchornea cordifolia (Djeka)?",
-          fr: "Laquelle de ces utilisations médicinales n'est PAS associée à Alchornea cordifolia (Djéka) ?"
+          en: "Which plant is used to treat cough as a decoction?",
+          fr: "Quelle plante est utilisée pour traiter la toux en décoction ?"
         },
         options: {
           en: [
-            "Treatment for diabetes",
-            "Intimate hygiene",
-            "Post-partum care",
-            "Iron deficiency"
+            "Guava leaf",
+            "Djeka leaf",
+            "Honey and lemon",
+            "Hibiscus flower"
           ],
           fr: [
-            "Traitement du diabète",
-            "Hygiène intime",
-            "Soins post-partum",
-            "Carence en fer"
+            "Feuille de goyave",
+            "Feuille de djeka",
+            "Miel et citron",
+            "Fleur d'hibiscus"
           ]
         },
         correctAnswerIndex: 0,
         explanation: {
-          en: "While Djeka (Alchornea cordifolia) has many medicinal uses including intimate hygiene, post-partum care, and treating iron deficiency, it is not traditionally used to treat diabetes.",
-          fr: "Bien que le Djéka (Alchornea cordifolia) ait de nombreux usages médicinaux, notamment l'hygiène intime, les soins post-partum et le traitement des carences en fer, il n'est pas traditionnellement utilisé pour traiter le diabète."
+          en: "Guava leaves are recognized for their antiseptic and anti-inflammatory properties. A decoction of the leaves in hot water effectively relieves cough.",
+          fr: "Les feuilles de goyave sont reconnues pour leurs propriétés antiseptiques et anti-inflammatoires. Une décoction des feuilles dans de l'eau chaude permet de soulager efficacement la toux."
         }
       },
       {
-        id: "q3",
+        id: "plants-q3",
         question: {
-          en: "Which plant is used to treat asthma, yellow fever, and snake bites in traditional African medicine?",
-          fr: "Quelle plante est utilisée pour traiter l'asthme, la fièvre jaune et les morsures de serpent dans la médecine traditionnelle africaine ?"
+          en: "Which plant is used for muscle pain?",
+          fr: "Quelle plante est utilisée pour les douleurs musculaires ?"
         },
         options: {
           en: [
-            "Bridelia ferruginea",
-            "Baphia nitida",
-            "Antidesma venosum",
-            "Aristolochia ringens"
+            "Alstonia boonei (Stoolwood)",
+            "Blighia unijugata (Bébi)",
+            "Bridelia ferruginea (Séa)",
+            "Anthocleista nobilis (Cabbage tree)"
           ],
           fr: [
-            "Bridelia ferruginea",
-            "Baphia nitida",
-            "Antidesma venosum",
-            "Aristolochia ringens"
+            "Alstonia boonei (Soula fusain)",
+            "Blighia unijugata (Bébi)",
+            "Bridelia ferruginea (Séa)",
+            "Anthocleista nobilis (Arbre chou)"
+          ]
+        },
+        correctAnswerIndex: 0,
+        explanation: {
+          en: "Stoolwood is known for its anti-inflammatory and analgesic properties. A decoction of the leaves or bark is often used as a massage to relieve muscle pain.",
+          fr: "Le Soula fusain est connu pour ses propriétés anti-inflammatoires et analgésiques. Une décoction des feuilles ou de l'écorce est souvent utilisée en massage pour soulager les douleurs musculaires."
+        }
+      },
+      {
+        id: "plants-q4",
+        question: {
+          en: "Which plant is used to relieve headaches?",
+          fr: "Quelle plante est utilisée pour soulager les maux de tête ?"
+        },
+        options: {
+          en: [
+            "Baphia nitida (Camwood)",
+            "Bridelia ferruginea (Séa)",
+            "Anthocleista nobilis (Cabbage tree)",
+            "Djeka leaf"
+          ],
+          fr: [
+            "Baphia nitida (Okoué)",
+            "Bridelia ferruginea (Séa)",
+            "Anthocleista nobilis (Arbre chou)",
+            "Feuille de djeka"
+          ]
+        },
+        correctAnswerIndex: 0,
+        explanation: {
+          en: "Baphia nitida leaves are crushed and applied as a poultice on the forehead to relieve headaches.",
+          fr: "Les feuilles de Baphia nitida sont écrasées et appliquées en cataplasme sur le front pour soulager les maux de tête."
+        }
+      }
+    ]
+  },
+  {
+    id: "treatments-quiz",
+    title: {
+      en: "Traditional African Treatments",
+      fr: "Traitements traditionnels africains"
+    },
+    description: {
+      en: "Learn about traditional treatments and preparation methods in Côte d'Ivoire",
+      fr: "Découvrez les traitements traditionnels et méthodes de préparation en Côte d'Ivoire"
+    },
+    difficulty: "medium",
+    category: "treatments",
+    timeInMinutes: 4,
+    questions: [
+      {
+        id: "treatments-q1",
+        question: {
+          en: "What is the recommended duration for boiling a decoction of guava leaves?",
+          fr: "Quelle est la durée recommandée pour faire bouillir une décoction de feuilles de goyave ?"
+        },
+        options: {
+          en: [
+            "5 minutes",
+            "10 minutes",
+            "20 minutes",
+            "30 minutes"
+          ],
+          fr: [
+            "5 minutes",
+            "10 minutes",
+            "20 minutes",
+            "30 minutes"
           ]
         },
         correctAnswerIndex: 1,
         explanation: {
-          en: "Baphia nitida (Okoue) is used in traditional medicine to treat asthma, yellow fever, diabetes, and snake bites.",
-          fr: "Baphia nitida (Okoué) est utilisée en médecine traditionnelle pour traiter l'asthme, la fièvre jaune, le diabète et les morsures de serpent."
+          en: "A decoction of guava leaves should be boiled for about 10 minutes to release the active principles of the plant.",
+          fr: "Une décoction de feuilles de goyave doit être bouillie pendant environ 10 minutes pour libérer les principes actifs de la plante."
         }
       },
       {
-        id: "q4",
+        id: "treatments-q2",
         question: {
-          en: "What is the correct method for preparing Djeka (Alchornea cordifolia) for medicinal use?",
-          fr: "Quelle est la méthode correcte pour préparer le Djéka (Alchornea cordifolia) à usage médicinal ?"
+          en: "Which plant is often used as an infusion to calm indigestion?",
+          fr: "Quelle plante est souvent utilisée en infusion pour calmer une indigestion ?"
         },
         options: {
           en: [
-            "Crush the leaves and apply directly to the skin",
-            "Boil the leaves for 15 minutes and let infuse for at least 30 minutes",
-            "Dry the leaves and smoke them",
-            "Mix the roots with honey and consume immediately"
+            "Anthocleista nobilis (Cabbage tree)",
+            "Djeka leaf",
+            "Ginger root",
+            "Neem leaf"
           ],
           fr: [
-            "Écraser les feuilles et les appliquer directement sur la peau",
-            "Faire bouillir les feuilles 15 minutes et laisser infuser au moins 30 minutes",
-            "Sécher les feuilles et les fumer",
-            "Mélanger les racines avec du miel et consommer immédiatement"
-          ]
-        },
-        correctAnswerIndex: 1,
-        explanation: {
-          en: "The traditional method for preparing Djeka involves boiling the leaves for about 15 minutes, then removing from heat and letting it infuse for at least 30 minutes before filtering.",
-          fr: "La méthode traditionnelle de préparation du Djéka consiste à faire bouillir les feuilles pendant environ 15 minutes, puis à retirer du feu et à laisser infuser pendant au moins 30 minutes avant de filtrer."
-        }
-      },
-      {
-        id: "q5",
-        question: {
-          en: "Which of these plants is primarily found in the savanna regions of Côte d'Ivoire?",
-          fr: "Laquelle de ces plantes se trouve principalement dans les régions de savane de Côte d'Ivoire ?"
-        },
-        options: {
-          en: [
-            "Anthocleista nobilis",
-            "Bridelia ferruginea",
-            "Baphia nitida",
-            "Alchornea cordifolia"
-          ],
-          fr: [
-            "Anthocleista nobilis",
-            "Bridelia ferruginea",
-            "Baphia nitida",
-            "Alchornea cordifolia"
-          ]
-        },
-        correctAnswerIndex: 1,
-        explanation: {
-          en: "Bridelia ferruginea (Sea) is a characteristic species of savannas in Côte d'Ivoire.",
-          fr: "Bridelia ferruginea (Séa) est une espèce caractéristique des savanes en Côte d'Ivoire."
-        }
-      },
-      {
-        id: "q6",
-        question: {
-          en: "Which precaution should NOT be taken when using Djeka (Alchornea cordifolia)?",
-          fr: "Quelle précaution ne doit PAS être prise lors de l'utilisation du Djéka (Alchornea cordifolia) ?"
-        },
-        options: {
-          en: [
-            "Avoid using for children under 15 years",
-            "Store in a cool, dry place away from light",
-            "Use daily for extended periods",
-            "Avoid using during pregnancy"
-          ],
-          fr: [
-            "Éviter d'utiliser pour les enfants de moins de 15 ans",
-            "Conserver dans un endroit frais et sec, à l'abri de la lumière",
-            "Utiliser quotidiennement pendant de longues périodes",
-            "Éviter d'utiliser pendant la grossesse"
+            "Anthocleista nobilis (Arbre chou)",
+            "Feuille de djeka",
+            "Racine de gingembre",
+            "Feuille de neem"
           ]
         },
         correctAnswerIndex: 2,
         explanation: {
-          en: "Using Djeka daily for extended periods is not recommended. It should be used with moderation, and you should consult a doctor for any prolonged use.",
-          fr: "L'utilisation quotidienne du Djéka pendant de longues périodes n'est pas recommandée. Il doit être utilisé avec modération, et vous devriez consulter un médecin pour tout usage prolongé."
+          en: "Ginger is recognized for its digestive and soothing properties. An infusion of ginger root helps relieve digestive disorders.",
+          fr: "Le gingembre est reconnu pour ses propriétés digestives et apaisantes. Une infusion de racine de gingembre aide à soulager les troubles digestifs."
         }
       },
       {
-        id: "q7",
+        id: "treatments-q3",
         question: {
-          en: "Which family does Alchornea cordifolia (Djeka) belong to?",
-          fr: "À quelle famille appartient Alchornea cordifolia (Djéka) ?"
+          en: "How is a clay poultice prepared?",
+          fr: "Comment est préparé un cataplasme d'argile ?"
         },
         options: {
           en: [
-            "Euphorbiaceae",
-            "Gentianaceae",
-            "Phyllanthaceae",
-            "Fabaceae"
+            "Mix with cold water and apply directly.",
+            "Mix with hot water, add essential oils and let dry completely.",
+            "Mix with honey and salt.",
+            "Crush and boil."
           ],
           fr: [
-            "Euphorbiaceae",
-            "Gentianaceae",
-            "Phyllanthaceae",
-            "Fabaceae"
+            "Mélanger avec de l'eau froide et appliquer directement.",
+            "Mélanger avec de l'eau chaude, ajouter des huiles essentielles et laisser sécher complètement.",
+            "Mélanger avec du miel et du sel.",
+            "Écraser et faire bouillir."
+          ]
+        },
+        correctAnswerIndex: 1,
+        explanation: {
+          en: "The poultice should be mixed with hot water for better absorption of the active ingredients. Let it dry partially to avoid excessive dehydration of the skin.",
+          fr: "Le cataplasme doit être mélangé avec de l'eau chaude pour une meilleure absorption des principes actifs. Laisser sécher partiellement pour éviter une déshydratation excessive de la peau."
+        }
+      }
+    ]
+  },
+  {
+    id: "precautions-quiz",
+    title: {
+      en: "Precautions with Medicinal Plants",
+      fr: "Précautions d'usage des plantes"
+    },
+    description: {
+      en: "Learn about important precautions when using traditional medicinal plants",
+      fr: "Apprenez les précautions importantes lors de l'utilisation des plantes médicinales traditionnelles"
+    },
+    difficulty: "easy",
+    category: "safety",
+    timeInMinutes: 3,
+    questions: [
+      {
+        id: "precautions-q1",
+        question: {
+          en: "Which plant is not recommended for pregnant women?",
+          fr: "Quelle plante est déconseillée pour les femmes enceintes ?"
+        },
+        options: {
+          en: [
+            "Neem leaf",
+            "Guava leaf",
+            "Alstonia boonei (Stoolwood)",
+            "Hibiscus flower"
+          ],
+          fr: [
+            "Feuille de neem",
+            "Feuille de goyave",
+            "Alstonia boonei (Soula fusain)",
+            "Fleur d'hibiscus"
           ]
         },
         correctAnswerIndex: 0,
         explanation: {
-          en: "Alchornea cordifolia (Djeka) belongs to the Euphorbiaceae family, which includes many other medicinal plants.",
-          fr: "Alchornea cordifolia (Djéka) appartient à la famille des Euphorbiaceae, qui comprend de nombreuses autres plantes médicinales."
+          en: "Neem leaf contains active compounds that can cause uterine contractions, which is dangerous during pregnancy.",
+          fr: "La feuille de neem contient des composés actifs pouvant provoquer des contractions utérines, ce qui est dangereux pendant la grossesse."
         }
       },
       {
-        id: "q8",
+        id: "precautions-q2",
         question: {
-          en: "Which plant is used for treating diarrhea, fever, and chickenpox in traditional medicine?",
-          fr: "Quelle plante est utilisée pour traiter la diarrhée, la fièvre et la varicelle en médecine traditionnelle ?"
+          en: "What is the main precaution when taking ginger decoction?",
+          fr: "Quelle est la principale précaution lors de la prise de décoction de gingembre ?"
         },
         options: {
           en: [
-            "Berlinia grandiflora",
-            "Bridelia ferruginea",
-            "Blighia unijugata",
-            "Antidesma venosum"
+            "Do not take on an empty stomach.",
+            "Drink it with lemon.",
+            "Mix it with honey.",
+            "Take it before sleeping."
           ],
           fr: [
-            "Berlinia grandiflora",
-            "Bridelia ferruginea",
-            "Blighia unijugata",
-            "Antidesma venosum"
+            "Ne pas le prendre à jeun.",
+            "Le boire avec du citron.",
+            "Le mélanger avec du miel.",
+            "Le prendre avant de dormir."
+          ]
+        },
+        correctAnswerIndex: 0,
+        explanation: {
+          en: "Ginger can cause stomach irritation if consumed on an empty stomach.",
+          fr: "Le gingembre peut provoquer une irritation de l'estomac s'il est consommé à jeun."
+        }
+      }
+    ]
+  },
+  {
+    id: "true-false-quiz",
+    title: {
+      en: "General Knowledge on Remedies",
+      fr: "Connaissances générales sur les remèdes"
+    },
+    description: {
+      en: "Test your knowledge with these true or false questions about traditional remedies",
+      fr: "Testez vos connaissances avec ces questions vrai ou faux sur les remèdes traditionnels"
+    },
+    difficulty: "easy",
+    category: "general",
+    timeInMinutes: 2,
+    questions: [
+      {
+        id: "true-false-q1",
+        question: {
+          en: "Ginger is used to treat digestive disorders.",
+          fr: "Le gingembre est utilisé pour soigner les troubles digestifs."
+        },
+        options: {
+          en: [
+            "True",
+            "False"
+          ],
+          fr: [
+            "Vrai",
+            "Faux"
+          ]
+        },
+        correctAnswerIndex: 0,
+        explanation: {
+          en: "Ginger stimulates digestion and soothes nausea.",
+          fr: "Le gingembre stimule la digestion et apaise les nausées."
+        }
+      },
+      {
+        id: "true-false-q2",
+        question: {
+          en: "Clay should always be allowed to dry completely on the skin.",
+          fr: "L'argile doit toujours être laissée sécher complètement sur la peau."
+        },
+        options: {
+          en: [
+            "True",
+            "False"
+          ],
+          fr: [
+            "Vrai",
+            "Faux"
           ]
         },
         correctAnswerIndex: 1,
         explanation: {
-          en: "Bridelia ferruginea (Sea) is traditionally used to treat diarrhea, fever, chickenpox, and jaundice.",
-          fr: "Bridelia ferruginea (Séa) est traditionnellement utilisée pour traiter la diarrhée, la fièvre, la varicelle et l'ictère."
-        }
-      },
-      {
-        id: "q9",
-        question: {
-          en: "In which part of Côte d'Ivoire is Alchornea cordifolia (Djeka) most commonly found?",
-          fr: "Dans quelle partie de la Côte d'Ivoire trouve-t-on le plus communément Alchornea cordifolia (Djéka) ?"
-        },
-        options: {
-          en: [
-            "Only in the northern savanna",
-            "Only along the coastal regions",
-            "Only in the western mountains",
-            "Throughout all regions of Côte d'Ivoire"
-          ],
-          fr: [
-            "Uniquement dans la savane du nord",
-            "Uniquement le long des régions côtières",
-            "Uniquement dans les montagnes de l'ouest",
-            "Dans toutes les régions de la Côte d'Ivoire"
-          ]
-        },
-        correctAnswerIndex: 3,
-        explanation: {
-          en: "Alchornea cordifolia (Djeka) is widespread and can be found throughout all regions of Côte d'Ivoire.",
-          fr: "Alchornea cordifolia (Djéka) est très répandu et peut être trouvé dans toutes les régions de la Côte d'Ivoire."
-        }
-      },
-      {
-        id: "q10",
-        question: {
-          en: "Which plant is known for its healing properties for joint pain and body swelling?",
-          fr: "Quelle plante est connue pour ses propriétés curatives contre les douleurs articulaires et les gonflements du corps ?"
-        },
-        options: {
-          en: [
-            "Antidesma venosum",
-            "Aristolochia ringens",
-            "Berlinia grandiflora",
-            "Blighia unijugata"
-          ],
-          fr: [
-            "Antidesma venosum",
-            "Aristolochia ringens",
-            "Berlinia grandiflora",
-            "Blighia unijugata"
-          ]
-        },
-        correctAnswerIndex: 1,
-        explanation: {
-          en: "Aristolochia ringens (Gaping Dutchman's Pipe) is used in traditional medicine to treat body swelling and joint pain.",
-          fr: "Aristolochia ringens (Aristoloche en gueule) est utilisée en médecine traditionnelle pour traiter les gonflements du corps et les douleurs articulaires."
+          en: "Completely dry clay can cause skin dehydration.",
+          fr: "Une argile complètement sèche peut provoquer une déshydratation cutanée."
         }
       }
     ]

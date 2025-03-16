@@ -68,7 +68,7 @@ export const PlantDetail: React.FC = () => {
                 <Heart className="w-5 h-5" />
                 <h2 className="text-xl font-semibold">{t('plants.details.medicinalUses')}</h2>
               </div>
-              <ul className="list-disc list-inside text-gray-700 mb-6">
+              <ul className="list-disc list-inside text-gray-700 mb-6 list-none">
                 {plant.medicinalUses[i18n.language as 'en' | 'fr'].map((use, index) => (
                   <li key={index}>{use}</li>
                 ))}
@@ -101,26 +101,17 @@ export const PlantDetail: React.FC = () => {
                     <AlertTriangle className="w-5 h-5" />
                     <h3 className="font-semibold text-gray-900">{t('plants.details.precautions')}</h3>
                   </div>
-                  <ul className="list-disc list-inside text-gray-700">
+                  <ul className="list-disc list-inside text-gray-700 list-none">
                     {plant.remedies[i18n.language as 'en' | 'fr'].precautions.map((precaution, index) => (
                       <li key={index}>{precaution}</li>
                     ))}
                   </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h2 className="text-lg font-semibold text-gray-900 mb-2">{t('plants.details.sources')}</h2>
-                <ul className="list-disc list-inside text-gray-600">
-                  {plant.sources.map((source, index) => (
-                    <li key={index}>{source}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
           </div>
         </div>
-      </div>
     </div>
   );
 };

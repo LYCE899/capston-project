@@ -1,190 +1,151 @@
 // src/pages/QuizResults.tsx
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { getUserQuizResults } from '../services/quizService';
-import { User } from 'firebase/auth';
-import { Award, Clock, Calendar, ChevronRight } from 'lucide-react';
+import { QuizResult } from '../types/Quiz';
+import { Award } from 'lucide-react';
 
-// Type pour les résultats du quiz
-interface QuizResult {
-  id: string;
-  userId: string;
-  quizId: string;
-  quizTitle?: string;
-  score: number;
-  totalQuestions: number;
-  completedAt: Date;
-  timeSpentInSeconds: number;
-  answers: {
-    questionId: string;
-    selectedAnswerIndex: number;
-    isCorrect: boolean;
-  }[];
+interface AuthContextType {
+  user: { uid: string } | null;
 }
 
-export const QuizResults: React.FC = () => {
-  const { i18n, t } = useTranslation();
-  const { user } = useAuth() as { user: User | null };
+const QuizResults: React.FC = () => {
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+  const { user } = useAuth() as AuthContextType;
   
   const [results, setResults] = useState<QuizResult[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
+  
   useEffect(() => {
     const fetchResults = async () => {
-      if (!user) return;
+      if (!user) {
+        navigate('/login');
+        return;
+      }
       
       try {
         setLoading(true);
-        const userResults = await getUserQuizResults(user.uid);
-        setResults(userResults);
-        setError(null);
+        const fetchedResults = await getUserQuizResults(user.uid);
+        setResults(fetchedResults);
       } catch (err) {
-        console.error('Erreur lors du chargement des résultats:', err);
-        setError(t('quizResults.errorLoading', 'Impossible de charger les résultats. Veuillez réessayer plus tard.'));
+        console.error('Error loading quiz results:', err);
+        setError(t('quizResults.errorLoading', 'Unable to load your quiz results. Please try again later.'));
       } finally {
         setLoading(false);
       }
     };
-
+    
     fetchResults();
-  }, [user, t]);
-
-  // Formater le temps passé
-  const formatTimeSpent = (seconds: number) => {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = seconds % 60;
-    return `${minutes}m ${remainingSeconds}s`;
-  };
-
-  // Formater la date
+  }, [user, navigate, t]);
+  
+  // Format date
   const formatDate = (date: Date) => {
-    return new Date(date).toLocaleDateString(i18n.language === 'fr' ? 'fr-FR' : 'en-US', {
+    return new Intl.DateTimeFormat(navigator.language, {
       year: 'numeric',
       month: 'short',
       day: 'numeric',
       hour: '2-digit',
       minute: '2-digit'
-    });
+    }).format(date);
   };
-
-  // Obtenir la couleur en fonction du score
+  
+  // Get score color
   const getScoreColor = (score: number) => {
     if (score >= 80) return 'text-green-600';
     if (score >= 60) return 'text-yellow-600';
     return 'text-red-600';
   };
-
+  
   if (loading) {
-    return (
-      <div className="flex justify-center py-12">
-        <div className="animate-spin h-8 w-8 text-emerald-600">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-          </svg>
-        </div>
-      </div>
-    );
+    return <div className="text-center py-8">{t('common.loading', 'Loading...')}</div>;
   }
-
-  if (!user) {
-    return (
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="bg-yellow-50 border border-yellow-200 text-yellow-700 px-4 py-3 rounded mb-4">
-          {t('quizResults.notLoggedIn', 'Vous devez être connecté pour voir vos résultats')}
-        </div>
-        <Link
-          to="/signin"
-          className="inline-block bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-700"
-        >
-          {t('auth.signIn', 'Se connecter')}
-        </Link>
-      </div>
-    );
+  
+  if (error) {
+    return <div className="text-center py-8 text-red-600">{error}</div>;
   }
-
+  
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="mb-12">
-        <h1 className="text-3xl font-bold text-gray-900 mb-4">
-          {t('quizResults.pageTitle', 'Mes résultats de quiz')}
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          {t('quizResults.pageTitle', 'My Quiz Results')}
         </h1>
         <p className="text-xl text-gray-600">
-          {t('quizResults.pageDescription', 'Consultez vos performances sur les différents quiz')}
+          {t('quizResults.pageDescription', 'See how well you\'ve done on previous quizzes')}
         </p>
       </div>
-
-      {error ? (
-        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded mb-4">
-          {error}
-        </div>
-      ) : results.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {results.map((result) => (
-            <div key={result.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="bg-emerald-600 p-4">
-                <h2 className="text-xl font-semibold text-white truncate">
-                  {result.quizTitle || t('quizResults.untitledQuiz', 'Quiz sans titre')}
-                </h2>
-              </div>
-              
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div className={`text-4xl font-bold ${getScoreColor(result.score)}`}>
-                    {result.score}%
-                  </div>
-                  <div className="flex items-center text-gray-500">
-                    <Award className="w-5 h-5 mr-1" />
-                    <span>
-                      {result.answers.filter(a => a.isCorrect).length}/{result.totalQuestions}
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="space-y-2 text-sm text-gray-600">
-                  <div className="flex items-center">
-                    <Calendar className="w-4 h-4 mr-2" />
-                    <span>{formatDate(result.completedAt)}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Clock className="w-4 h-4 mr-2" />
-                    <span>{formatTimeSpent(result.timeSpentInSeconds)}</span>
-                  </div>
-                </div>
-                
-                <div className="mt-6">
-                  <Link
-                    to={`/quizzes/${result.quizId}`}
-                    className="flex items-center justify-center px-4 py-2 bg-emerald-100 text-emerald-700 rounded hover:bg-emerald-200 transition-colors"
-                  >
-                    {t('quizResults.retakeQuiz', 'Refaire ce quiz')}
-                    <ChevronRight className="w-4 h-4 ml-1" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          ))}
+      
+      {results.length > 0 ? (
+        <div className="bg-white shadow overflow-hidden rounded-lg">
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead className="bg-gray-50">
+              <tr>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  {t('quizResults.quizTaken', 'Quiz Taken')}
+                </th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  {t('quizResults.score', 'Score')}
+                </th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  {t('quizResults.date', 'Date')}
+                </th>
+                <th scope="col" className="relative px-6 py-3">
+                  <span className="sr-only">{t('quizResults.viewDetails', 'View Details')}</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200">
+              {results.map((result) => (
+                <tr key={result.id}>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="text-sm font-medium text-gray-900">Quiz #{result.quizId}</div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className={`text-sm font-bold ${getScoreColor(result.score)}`}>
+                      {result.score}%
+                    </div>
+                    <div className="text-sm text-gray-500">
+                      {t('quiz.correctAnswers', '{{correct}} correct out of {{total}}', {
+                        correct: result.answers.filter(a => a.isCorrect).length,
+                        total: result.totalQuestions
+                      })}
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {formatDate(result.completedAt)}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <button
+                      onClick={() => navigate(`/quizzes/${result.quizId}`)}
+                      className="text-emerald-600 hover:text-emerald-900"
+                    >
+                      {t('quizResults.viewDetails', 'View Details')}
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       ) : (
-        <div className="bg-white rounded-lg shadow-md p-8 text-center">
-          <div className="mb-4">
-            <Award className="w-16 h-16 mx-auto text-gray-300" />
-          </div>
-          <h3 className="text-xl font-medium text-gray-700 mb-2">
-            {t('quizResults.noResults', 'Aucun résultat pour le moment')}
+        <div className="text-center py-10 bg-white shadow rounded-lg">
+          <Award className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+          <h3 className="text-lg font-medium text-gray-900 mb-2">
+            {t('quizResults.noResults', 'You haven\'t completed any quizzes yet')}
           </h3>
           <p className="text-gray-500 mb-6">
-            {t('quizResults.startQuiz', "Vous n'avez pas encore complété de quiz. Commencez à en faire pour voir vos résultats ici.")}
+            {t('quiz.pageDescription', 'Take a quiz to test your knowledge about African medicinal plants')}
           </p>
-          <Link
-            to="/quizzes"
-            className="inline-block bg-emerald-600 text-white px-6 py-3 rounded-lg hover:bg-emerald-700 transition-colors"
+          <button
+            onClick={() => navigate('/quizzes')}
+            className="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-700"
           >
-            {t('quizResults.exploreQuizzes', 'Explorer les quiz disponibles')}
-          </Link>
+            {t('quiz.backToQuizzes', 'Back to Quizzes')}
+          </button>
         </div>
       )}
     </div>
