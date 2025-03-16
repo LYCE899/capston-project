@@ -13,7 +13,6 @@ import { Home } from "./pages/Home";
 import { PlantList } from "./pages/quiz/PlantList";
 import { PlantDetail } from "./pages/PlantDetail";
 import { Tips } from "./pages/Tips";
-import TipDetail from "./pages/TipDetail"; // Nouvelle importation
 import { Remedies } from "./pages/Remedies";
 import RemedyDetail from "./pages/RemedyDetail"; // Importation de RemedyDetail
 import { SignIn } from "./pages/SignIn";
@@ -109,15 +108,7 @@ const AppRoutes: React.FC = () => {
               </ProtectedRoute>
             }
           />
-          {/* Nouvelle route pour les détails des conseils */}
-          <Route
-            path="/tips/:tipId"
-            element={
-              <ProtectedRoute>
-                <TipDetail />
-              </ProtectedRoute>
-            }
-          />
+         
           <Route
             path="/remedies"
             element={
