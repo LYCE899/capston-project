@@ -1,69 +1,110 @@
-import { Tip } from '../types/Tip';
+export interface Tip {
+  type: string;
+  id: string;
+  title: {
+    en: string;
+    fr: string;
+  };
+  description: {
+    en: string;
+    fr: string;
+  };
+  content: {
+    en: string;
+    fr: string;
+  };
+  imageUrl: string;
+  category: {
+    en: string;
+    fr: string;
+  };
+}
 
-export const tips: Tip[] = [
+// src/data/tips.ts
+export const tips = [
   {
-    id: '1',
+    id: 'tip1',
     title: {
-      en: 'Proper Herb Drying Techniques',
-      fr: 'Techniques de séchage des herbes'
+      en: 'Clean Plants Before Use',
+      fr: 'Nettoyer les plantes avant utilisation'
     },
     description: {
-      en: 'Learn the proper techniques for drying medicinal herbs to preserve their healing properties. Traditional methods passed down through generations ensure maximum potency.',
-      fr: 'Apprenez les techniques appropriées pour sécher les herbes médicinales et préserver leurs propriétés curatives. Des méthodes traditionnelles transmises de génération en génération pour garantir une efficacité maximale.'
+      en: 'Always clean medicinal plants thoroughly before use to remove dirt, pesticides, and bacteria. This helps improve the effectiveness of the remedy.',
+      fr: 'Nettoyez toujours soigneusement les plantes médicinales avant utilisation pour éliminer la saleté, les pesticides et les bactéries. Cela permet d\'améliorer l\'efficacité du remède.'
     },
-    type: 'video',
-    mediaUrl: 'https://www.youtube.com/watch?v=DEsDUeTnpuk&t=11s'
+    advice: {
+      en: 'Use clean water and a soft brush to remove impurities without damaging the plant.',
+      fr: 'Utilisez de l\'eau propre et une brosse douce pour éliminer les impuretés sans abîmer la plante.'
+    },
+    mediaUrl: 'https://maison.20minutes.fr/wp-content/uploads/2020/11/nettoyer-plantes.jpg',
+    type: 'image'
   },
   {
-    id: '2',
+    id: 'tip2',
     title: {
-      en: 'Traditional Herb Garden',
-      fr: 'Jardin d\'herbes traditionnel'
+      en: 'Mixing Plants Safely',
+      fr: 'Mélanger les plantes en toute sécurité'
     },
     description: {
-      en: 'Discover how to create and maintain a traditional African medicinal herb garden. Learn about companion planting and sustainable practices.',
-      fr: 'Découvrez comment créer et entretenir un jardin d\'herbes médicinales traditionnelles africaines. Apprenez les techniques de plantation compagne et les pratiques durables.'
+      en: 'Avoid mixing plants you are not familiar with, as some combinations can cause adverse effects.',
+      fr: 'Évitez de mélanger des plantes que vous ne connaissez pas, car certaines combinaisons peuvent provoquer des effets indésirables.'
     },
-    type: 'image',
-    mediaUrl: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1200'
+    advice: {
+      en: 'If you experience any side effects, stop immediately and consult a healthcare professional.',
+      fr: 'Si vous ressentez des effets secondaires, arrêtez immédiatement et consultez un professionnel de santé.'
+    },
+    mediaUrl: 'https://images.squarespace-cdn.com/content/v1/5dce958ed647dc2422475bc3/1613380465332-7IUYPF6LRE2RTMB2PQ3Y/plantes-pour-tisane.jpg',
+    type: 'image'
   },
   {
-    id: '3',
+    id: 'tip3',
     title: {
-      en: 'Making Herbal Infusions',
-      fr: 'Préparation des infusions aux herbes'
+      en: 'Consult a Traditional Healer',
+      fr: 'Consultez un guérisseur traditionnel'
     },
     description: {
-      en: 'Master the art of making perfect herbal infusions for maximum therapeutic benefit. Learn about water temperature, steeping time, and proper storage.',
-      fr: 'Maîtrisez l\'art de préparer des infusions aux herbes parfaites pour un bénéfice thérapeutique maximal. Apprenez la température de l\'eau, le temps d\'infusion et le stockage approprié.'
+      en: 'If you have persistent health issues, consider consulting a traditional healer for a natural remedy.',
+      fr: 'Si vous avez des problèmes de santé persistants, envisagez de consulter un guérisseur traditionnel pour un remède naturel.'
     },
-    type: 'video',
-    mediaUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+    advice: {
+      en: 'Combine modern and traditional medicine for a more effective approach.',
+      fr: 'Combinez la médecine moderne et traditionnelle pour une approche plus efficace.'
+    },
+    mediaUrl: 'https://french.news.cn/afrique/2021-09/06/1310170330_16309059769651n.jpg',
+    type: 'image'
   },
   {
-    id: '4',
+    id: 'tip4',
     title: {
-      en: 'Harvesting Medicinal Plants',
-      fr: 'Récolte des plantes médicinales'
+      en: 'Avoid Harmful Substances During Treatment',
+      fr: 'Évitez les substances nocives pendant le traitement'
     },
     description: {
-      en: 'Learn the best practices for harvesting medicinal plants, including the optimal time of day and season for different species.',
-      fr: 'Apprenez les meilleures pratiques pour la récolte des plantes médicinales, y compris le moment optimal de la journée et de la saison pour différentes espèces.'
+      en: 'Avoid alcohol, coffee, and spicy foods while using medicinal plants to avoid interactions.',
+      fr: 'Évitez l\'alcool, le café et les aliments épicés lors de l\'utilisation de plantes médicinales pour éviter les interactions.'
     },
-    type: 'image',
-    mediaUrl: 'https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&w=1200'
+    advice: {
+      en: 'Drink plenty of water and maintain a balanced diet.',
+      fr: 'Buvez beaucoup d\'eau et maintenez une alimentation équilibrée.'
+    },
+    mediaUrl: 'https://sante-pratique-paris.fr/wp-content/uploads/2020/06/alcool-jeunes-adobestock-330661669-d0-b2-d1-8f-d1-87-d0-b5-d1-81-d0-bb-d0-b0-d0-b2-d0-b4-d1-83-d0-bc-d1-87-d0-b5-d0-b2.jpeg',
+    type: 'image'
   },
   {
-    id: '5',
+    id: 'tip5',
     title: {
-      en: 'Processing and Storage',
-      fr: 'Traitement et stockage'
+      en: 'Boost Immunity with Natural Remedies',
+      fr: 'Renforcez l\'immunité avec des remèdes naturels'
     },
     description: {
-      en: 'Essential guidelines for processing and storing medicinal plants to maintain their therapeutic properties over time.',
-      fr: 'Directives essentielles pour le traitement et le stockage des plantes médicinales afin de maintenir leurs propriétés thérapeutiques dans le temps.'
+      en: 'Boost your immune system using natural herbs like ginger, garlic, and honey.',
+      fr: 'Renforcez votre système immunitaire avec des herbes naturelles comme le gingembre, l\'ail et le miel.'
     },
-    type: 'image',
-    mediaUrl: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=1200'
+    advice: {
+      en: 'Prepare herbal teas and consume regularly for better health.',
+      fr: 'Préparez des tisanes et consommez-les régulièrement pour une meilleure santé.'
+    },
+    mediaUrl: 'https://i-sam.unimedias.fr/2021/05/05/alimentation-systeme-immunitaire.jpeg?auto=format,compress&cs=tinysrgb&w=1200',
+    type: 'image'
   }
 ];

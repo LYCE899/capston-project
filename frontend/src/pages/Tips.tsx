@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Video, Image } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { tips } from '../data/tips';
 
 export const Tips: React.FC = () => {
@@ -14,7 +13,7 @@ export const Tips: React.FC = () => {
           {i18n.language === 'en' ? 'Medicinal Plant Tips' : 'Conseils sur les Plantes Médicinales'}
         </h1>
         <p className="text-xl text-gray-600">
-          {i18n.language === 'en' 
+          {i18n.language === 'en'
             ? 'Learn essential techniques for working with medicinal plants'
             : 'Apprenez les techniques essentielles pour travailler avec les plantes médicinales'}
         </p>
@@ -23,6 +22,7 @@ export const Tips: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {tips.map((tip) => (
           <div key={tip.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
+            {/* Section média : image ou vidéo */}
             {tip.type === 'video' ? (
               <div className="aspect-w-16 aspect-h-9">
                 <iframe
@@ -41,6 +41,8 @@ export const Tips: React.FC = () => {
                 />
               </div>
             )}
+
+            {/* Section titre et contenu */}
             <div className="p-6">
               <div className="flex items-center gap-2 mb-4">
                 {tip.type === 'video' ? (
@@ -52,17 +54,23 @@ export const Tips: React.FC = () => {
                   {tip.title[i18n.language as 'en' | 'fr']}
                 </h2>
               </div>
+
+              {/* Description complète */}
               <p className="text-gray-600 mb-4">
-                {tip.description[i18n.language as 'en' | 'fr'].substring(0, 150)}...
+                {tip.description[i18n.language as 'en' | 'fr']}
               </p>
-              
-              {/* Ajout du bouton de lien vers la page de détail */}
-              <Link
-                to={`/tips/${tip.id}`}
-                className="inline-block px-4 py-2 mt-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition-colors"
-              >
-                {i18n.language === 'en' ? 'Read more' : 'Lire plus'}
-              </Link>
+
+              {/* Conseils (facultatif) */}
+              {tip.advice && (
+                <div className="mt-4 bg-gray-100 p-4 rounded-md">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                    {i18n.language === 'en' ? 'Advice' : 'Conseil'}
+                  </h3>
+                  <p className="text-gray-600">
+                    {tip.advice[i18n.language as 'en' | 'fr']}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         ))}
