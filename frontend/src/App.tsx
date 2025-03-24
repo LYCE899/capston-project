@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
-import { Welcome } from "./pages/Welcome";
+import Welcome from "./pages/Welcome";
 import { Home } from "./pages/Home";
 import { PlantList } from "./pages/quiz/PlantList";
 import { PlantDetail } from "./pages/PlantDetail";

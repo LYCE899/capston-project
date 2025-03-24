@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "rootDir": "../",   // ✅ Permet d'inclure le frontend
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "./scripts/**/*", 
+    "../frontend/src/data/**/*"   // ✅ Inclure le frontend dans la portée
+  ],
+  "exclude": ["node_modules"]
+}
