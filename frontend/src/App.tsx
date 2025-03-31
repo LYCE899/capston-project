@@ -24,7 +24,7 @@ import QuizList from "./pages/quiz/QuizList";
 import QuizDetail from "./pages/quiz/QuizDetail";
 import QuizResults from "./pages/QuizResults.tsx";
 import { TawkChat } from "./components/TawkChat"; // Importez ici le composant TawkChat
-
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
@@ -117,6 +117,8 @@ const AppRoutes: React.FC = () => {
               </ProtectedRoute>
             }
           />
+           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+    {/* ... other routes */}
           {/* Nouvelle route pour les détails des remèdes */}
           <Route
             path="/remedy/:id"

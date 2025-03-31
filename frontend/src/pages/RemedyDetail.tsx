@@ -174,7 +174,7 @@ const RemedyDetail = () => {
         </h2>
         <Link to="/remedies" className="text-emerald-600 hover:text-emerald-800 flex items-center">
           <FaArrowLeft className="mr-2" /> 
-          {t('remedy.backToList', 'Retour aux remèdes')}
+          {t('remedy.backToList', 'Back to remedies')}
         </Link>
       </div>
     );
@@ -291,7 +291,7 @@ const RemedyDetail = () => {
             <div className="mb-6">
               <h2 className="text-xl font-semibold mb-2 flex items-center">
                 <FaLeaf className="mr-2 text-emerald-600" />
-                {t('remedy.plants', 'Plantes utilisées')}
+                {t('remedy.plants', 'Plants used')}
               </h2>
               <ul className="list-disc list-inside text-gray-700 pl-2">
                 {remedyPlants.map((plant, index) => (
@@ -305,7 +305,7 @@ const RemedyDetail = () => {
             <div className="mb-6">
               <h2 className="text-xl font-semibold mb-2 flex items-center">
                 <FaFlask className="mr-2 text-emerald-600" />
-                {t('remedy.preparation', 'Préparation')}
+                {t('remedy.preparation', 'Preparation')}
               </h2>
               <p className="text-gray-700">{remedyPreparation}</p>
             </div>
@@ -326,7 +326,7 @@ const RemedyDetail = () => {
       <div className={`mt-8 ${showComments ? 'block' : 'hidden'}`}>
         <h2 className="text-2xl font-bold mb-6 text-gray-800 flex items-center">
           <BsChat className="mr-2" /> 
-          {t('comments.title', 'Commentaires')} ({comments.length})
+          {t('comments.title', 'Comments')} ({comments.length})
         </h2>
         
         {user ? (

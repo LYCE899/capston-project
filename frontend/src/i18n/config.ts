@@ -31,7 +31,8 @@ i18n
             navigation: 'Navigation',
             contact: 'Contact',
             followUs: 'Follow Us',
-            copyright: '© {{year}} Afrimeds. All rights reserved.'
+            copyright: '© {{year}} Afrimeds. All rights reserved.',
+            privacyLink: 'Politique de confidentialité',
           },
           home: {
             title: 'Afrimeds',
@@ -115,7 +116,13 @@ i18n
             email: 'Email address',
             password: 'Password',
             noAccount: "Don't have an account?",
-            alreadyHaveAccount: 'Already have an account?'
+            alreadyHaveAccount: 'Already have an account',
+            acceptPolicy: "By creating an account, you accept our",
+            privacyPolicy: "privacy policy"
+          },
+          privacy: {
+            backToSignUp: "← Back to Sign Up"
+
           },
           plants: {
             details: {
@@ -239,7 +246,8 @@ i18n
             navigation: 'Navigation',
             contact: 'Contact',
             followUs: 'Suivez-nous',
-            copyright: '© {{year}} Afrimeds. Tous droits réservés.'
+            copyright: '© {{year}} Afrimeds. Tous droits réservés.',
+            privacyLink: "Politique de confidentialité"
           },
           home: {
             title: 'Afrimeds',
@@ -323,7 +331,13 @@ i18n
             email: 'Adresse e-mail',
             password: 'Mot de passe',
             noAccount: "Vous n'avez pas de compte ?",
-            alreadyHaveAccount: 'Vous avez déjà un compte ?'
+            alreadyHaveAccount: 'Vous avez déjà un compte ?',
+            acceptPolicy: "En créant un compte, vous acceptez notre",
+            privacyPolicy: "politique de confidentialité"
+          },
+          privacy: {
+            backToSignUp: "← Retour à l'inscription"
+          
           },
           plants: {
             details: {

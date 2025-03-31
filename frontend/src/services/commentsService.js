@@ -15,17 +15,40 @@ import {
   serverTimestamp
 } from "firebase/firestore";
 import { db } from "../firebase";
+import { getAuth } from "firebase/auth";
 
 const COMMENTS_COLLECTION = 'comments';
 
+// Fonction utilitaire pour générer un nom d'utilisateur à partir d'un email
+const generateUsernameFromEmail = (email) => {
+  if (!email) return "Utilisateur";
+  
+  // Extraire la partie avant le @ dans l'email
+  const emailName = email.split('@')[0];
+  
+  // Formater le nom (remplacer les points/underscores par des espaces, capitaliser les mots)
+  return emailName
+    .split(/[._-]/)
+    .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
+};
+
 // Ajouter un nouveau commentaire
-export const addComment = async (commentData) => {
+export const addComment = async (commentData, remedyId) => {
   try {
     const commentsCollection = collection(db, COMMENTS_COLLECTION);
+    const auth = getAuth();
+    const currentUser = auth.currentUser;
+
+    // Générer un nom d'utilisateur à partir de l'email
+    const userName = currentUser && currentUser.email 
+      ? generateUsernameFromEmail(currentUser.email) 
+      : "Utilisateur";
     
-    // Préparer les données du commentaire
+    // Préparer les données du commentaire avec le nom d'utilisateur
     const comment = {
       ...commentData,
+      userName, // Ajouter le nom d'utilisateur
       createdAt: serverTimestamp(),
       likes: 0,
       likedBy: []
@@ -63,6 +86,8 @@ export const getCommentsByRemedyId = async (remedyId) => {
       return {
         id: doc.id,
         ...data,
+        // Si le commentaire n'a pas de userName, utiliser "Utilisateur" 
+        userName: data.userName || "Utilisateur",
         createdAt: data.createdAt ? data.createdAt.toDate() : new Date()
       };
     });
@@ -145,6 +170,7 @@ export const getCommentById = async (commentId) => {
     return {
       id: commentDoc.id,
       ...data,
+      userName: data.userName || "Utilisateur", // Assurer qu'un userName est présent
       createdAt: data.createdAt ? data.createdAt.toDate() : new Date()
     };
   } catch (error) {
@@ -170,6 +196,7 @@ export const getCommentsByUserId = async (userId) => {
       return {
         id: doc.id,
         ...data,
+        userName: data.userName || "Utilisateur", // Assurer qu'un userName est présent
         createdAt: data.createdAt ? data.createdAt.toDate() : new Date()
       };
     });
@@ -200,12 +227,55 @@ export const updateComment = async (commentId, newContent) => {
     return {
       id: commentId,
       ...data,
+      userName: data.userName || "Utilisateur", // Assurer qu'un userName est présent
       createdAt: data.createdAt ? data.createdAt.toDate() : new Date(),
       updatedAt: data.updatedAt ? data.updatedAt.toDate() : new Date()
     };
   } catch (error) {
     console.error(`Erreur lors de la mise à jour du commentaire ${commentId}:`, error);
     throw error;
+  }
+};
+
+// Migrer les commentaires existants pour ajouter le nom d'utilisateur
+export const migrateExistingComments = async () => {
+  try {
+    const commentsCollection = collection(db, COMMENTS_COLLECTION);
+    const q = query(commentsCollection);
+    const querySnapshot = await getDocs(q);
+    
+    const updatePromises = [];
+    
+    querySnapshot.docs.forEach(document => {
+      const commentData = document.data();
+      // Si le commentaire n'a pas de userName et a un userId
+      if (!commentData.userName && commentData.userId) {
+        const commentRef = doc(db, COMMENTS_COLLECTION, document.id);
+        
+        // Créer une promesse pour mettre à jour le commentaire
+        const updatePromise = (async () => {
+          try {
+            // On peut essayer de récupérer l'utilisateur depuis une collection "users" si elle existe
+            // Sinon, on utilise une valeur par défaut
+            await updateDoc(commentRef, { 
+              userName: "Utilisateur" 
+            });
+          } catch (innerError) {
+            console.error(`Erreur lors de la mise à jour du commentaire ${document.id}:`, innerError);
+          }
+        })();
+        
+        updatePromises.push(updatePromise);
+      }
+    });
+    
+    // Attendre que toutes les mises à jour soient terminées
+    await Promise.all(updatePromises);
+    
+    return true;
+  } catch (error) {
+    console.error('Erreur lors de la migration des commentaires:', error);
+    return false;
   }
 };
 
@@ -216,5 +286,6 @@ export default {
   likeComment,
   getCommentById,
   getCommentsByUserId,
-  updateComment
+  updateComment,
+  migrateExistingComments // Exporter la fonction de migration
 };

@@ -12,7 +12,7 @@ import { app } from '../firebase';
 // Création du contexte avec une valeur par défaut
 const AuthContext = createContext({
   user: null,
-  signUp: async () => {},
+  signUp: async (email, password) => {},
   signIn: async (email, password) => {},
   signOut: async () => {},
   loading: true

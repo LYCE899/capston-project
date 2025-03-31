@@ -5,7 +5,7 @@ export const remedies: Remedy[] = [
   {
     id: '1',
     title: {
-      en: 'Traditional African Cough Syrup',
+      en: 'Traditional cough syrup ',
       fr: 'Sirop contre la toux traditionnel '
     },
     description: {

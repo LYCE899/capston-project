@@ -10,6 +10,7 @@ export const SignUp: React.FC = () => {
   const { signUp } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [accepted, setAccepted] = useState(false); // ✅ Nouveau : état pour la case à cocher
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -17,10 +18,15 @@ export const SignUp: React.FC = () => {
     e.preventDefault();
     setLoading(true);
     setError(null);
-    
+
+    if (!accepted) {
+      setError('Vous devez accepter la politique de confidentialité pour continuer.');
+      setLoading(false);
+      return;
+    }
+
     try {
       await signUp(email, password);
-      // After successful signup, redirect to signin
       navigate('/signin');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred during sign up');
@@ -43,14 +49,14 @@ export const SignUp: React.FC = () => {
             </Link>
           </p>
         </div>
-        
+
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           {error && (
             <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded relative" role="alert">
               <span className="block sm:inline">{error}</span>
             </div>
           )}
-          
+
           <div className="space-y-4">
             <div>
               <label htmlFor="email-address" className="block text-sm font-medium text-gray-700 mb-1">
@@ -67,8 +73,9 @@ export const SignUp: React.FC = () => {
                 className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 focus:z-10 sm:text-sm"
                 placeholder="exemple@email.com"
               />
-              <p className="mt-1 text-sm text-gray-500">Entrez une adresse email valide</p>
+              <p className="mt-1 text-sm text-gray-500">Enter valid email address</p>
             </div>
+
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
                 {t('auth.password')}
@@ -86,13 +93,37 @@ export const SignUp: React.FC = () => {
               />
               <p className="mt-1 text-sm text-gray-500">Minimum 8 caractères</p>
             </div>
+
+            {/* ✅ Case à cocher */}
+            <div className="flex items-start">
+              <input
+                type="checkbox"
+                id="acceptPolicy"
+                checked={accepted}
+                onChange={(e) => setAccepted(e.target.checked)}
+                className="mt-1 mr-2"
+              />
+              <label htmlFor="acceptPolicy" className="text-sm text-gray-600">
+              By creating an account, you agree to our{' '}
+                <a
+                  href="/privacy-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-emerald-600 hover:text-emerald-500"
+                >
+                  privacy policy
+                </a>.
+              </label>
+            </div>
           </div>
 
           <div>
             <button
               type="submit"
               disabled={loading}
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
+              className={`group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white ${
+                accepted ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-gray-400 cursor-not-allowed'
+              } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500`}
             >
               {loading ? (
                 <Loader className="animate-spin h-5 w-5" />
