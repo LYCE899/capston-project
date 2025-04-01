@@ -70,7 +70,7 @@ export const tips = [
       en: 'Combine modern and traditional medicine for a more effective approach.',
       fr: 'Combinez la médecine moderne et traditionnelle pour une approche plus efficace.'
     },
-    mediaUrl: 'https://french.news.cn/afrique/2021-09/06/1310170330_16309059769651n.jpg',
+    mediaUrl: 'https://carnetsdevoyages.jeanlou.fr/Le_Village_de_Medecine_Traditionnelle_MBOKA_A_NZAMBE/files/village-traditionnel-mboka-a-nzambe-02-le-temple-principal-le-pretre-guerisseur-21e80dimg_210522146700_dxowtmk-131k-web.jpg',
     type: 'image'
   },
   {

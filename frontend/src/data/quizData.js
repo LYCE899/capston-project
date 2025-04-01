@@ -3,8 +3,8 @@ export const quizzes = [
   {
     id: "plants-quiz",
     title: {
-      en: "African Medicinal Plants",
-      fr: "Plantes médicinales africaines"
+      en: "Medicinal Plants",
+      fr: "Plantes médicinales"
     },
     description: {
       en: "Test your knowledge about medicinal plants used in Côte d'Ivoire",
@@ -123,8 +123,8 @@ export const quizzes = [
   {
     id: "treatments-quiz",
     title: {
-      en: "Traditional African Treatments",
-      fr: "Traitements traditionnels africains"
+      en: "Traditional Treatments",
+      fr: "Traitements traditionnels"
     },
     description: {
       en: "Learn about traditional treatments and preparation methods in Côte d'Ivoire",

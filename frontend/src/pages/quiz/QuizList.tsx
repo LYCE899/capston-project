@@ -77,7 +77,7 @@ const QuizList: React.FC = () => {
         <p className="text-xl text-gray-600">
           {t(
             "quiz.pageDescription",
-            "Test your knowledge about African medicinal plants"
+            "Test your knowledge about Cote d'Ivoire medicinal plants"
           )}
         </p>
       </div>

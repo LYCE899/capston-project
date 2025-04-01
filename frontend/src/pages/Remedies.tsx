@@ -162,8 +162,8 @@ export function Remedies(): JSX.Element {
         </h1>
         <p className="text-xl text-gray-600">
           {i18n.language === 'en'
-            ? 'Discover traditional African healing remedies'
-            : 'Découvrez les remèdes de guérison traditionnels africains'}
+            ? 'Discover the simple and practical remedies of our traditional healers'
+            : 'Découvrez les remèdes simples et pratiques de nos guérisseurs traditionnels'}
         </p>
       </div>
 

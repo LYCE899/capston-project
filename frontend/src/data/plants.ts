@@ -395,8 +395,8 @@ export const plants: Plant[] = [
     en: 'Berlinia grandiflora is present in a large part of tropical Africa, but it is particularly abundant in West and Central Africa. In Côte d\'Ivoire, it is found along rivers, in gallery forests and swampy areas. It also grows in secondary forests and degraded areas with constant humidity. It prefers rich soils and annual rainfall above 1200 mm. It tolerates partial shade but flowers better in full sun. The Gallery Melegba plays a key ecological role in bank stabilization and biodiversity conservation.',
     fr: 'Berlinia grandiflora est présente dans une large partie de l\'Afrique tropicale, mais elle est particulièrement abondante en Afrique de l\'Ouest et en Afrique centrale. En Côte d\'Ivoire, on le trouve le long des rivières, dans les forêts-galeries et les zones marécageuses. Il pousse également dans les forêts secondaires et les zones dégradées à humidité constante. Il préfère les sols riches et une pluviométrie annuelle supérieure à 1200 mm. Il tolère l\'ombre partielle mais fleurit mieux en plein soleil. Le Mélégba des galeries joue un rôle écologique clé dans la stabilisation des berges et la conservation de la biodiversité.'
   },
-  imageUrl: 'https://lh3.googleusercontent.com/proxy/R6R_nbR5dZ_jp-ka16yE_TJZOGYiWQjpJ7eoHafoukrOIsj1CkkBD0XoH-73LzXX6-LYzZijmt9S9U6pgl5CoF2kmStQfbHOZHUS-yUap7hxt29Hz757Hy_1uLc9HPMbHdvwTSp23Aa_U4M2F7N_0KKdm_oPVF0uBg0hqz24PHGYlwc',
-  thumbnailUrl: 'https://lh3.googleusercontent.com/proxy/R6R_nbR5dZ_jp-ka16yE_TJZOGYiWQjpJ7eoHafoukrOIsj1CkkBD0XoH-73LzXX6-LYzZijmt9S9U6pgl5CoF2kmStQfbHOZHUS-yUap7hxt29Hz757Hy_1uLc9HPMbHdvwTSp23Aa_U4M2F7N_0KKdm_oPVF0uBg0hqz24PHGYlwc',
+  imageUrl: 'https://i.pinimg.com/736x/1b/dd/d8/1bddd8e2e53ab6372ecff399801bb44c.jpg',
+  thumbnailUrl: 'https://i.pinimg.com/736x/1b/dd/d8/1bddd8e2e53ab6372ecff399801bb44c.jpg',
   sources: []
 },
 
