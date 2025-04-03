@@ -4,30 +4,6 @@ Afrimeds is an interactive and multilingual web application designed to **preser
 
 🔗 **GitHub Repository**: [https://github.com/LYCE899/capston-project](https://github.com/LYCE899/capston-project)
 
----
-
-## 📚 Table of Contents
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Project Structure](#project-structure)
-- [Usage](#usage)
-- [Current Project Status](#current-project-status)
-- [Future Developments](#future-developments)
-
----
-
-## ✨ Features
-
-- 📖 Catalog of traditional medicinal plants from Côte d'Ivoire  
-- 🧾 Detailed plant profiles with descriptions, uses, and preparation methods  
-- 🌍 Multilingual interface (French and English)  
-- 🔐 Secure Firebase-based user authentication  
-- 💬 Comment system to share feedback on remedies  
-- 🌿 Dedicated sections: Plants, Tips, Remedies, Quizzes, About  
-- 📱 Fully responsive design for mobile and desktop
-
----
 
 ## 🛠️ Technologies Used
 
@@ -38,24 +14,7 @@ Afrimeds is an interactive and multilingual web application designed to **preser
 - **Firebase Authentication** – User sign-in and account management  
 
 ### Backend & Database:
-- **Firebase Firestore** – Cloud-based NoSQL database to store plant data and user comments  
-
----
-
-## ⚙️ Installation
-
-Follow the steps below to set up the project locally:
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/LYCE899/capston-project.git
-
-# 2. Navigate into the project directory
-cd afrimeds
-
-# 3. Install dependencies
-npm install
-
+- **Firebase Firestore** – Cloud-based NoSQL database to store plant data and user comments
 
 ![image commencer](https://github.com/user-attachments/assets/8f8f97d4-154f-4a51-8baf-1b44a9a4dffc)
 ![creer compte image](https://github.com/user-attachments/assets/85a7e881-2db5-4ab5-8a5b-25400142e357)
