@@ -1,3 +1,4 @@
+![image du welcomepage](https://github.com/user-attachments/assets/81ea266d-729e-4d7a-b788-440086c2c0c0)
 ﻿# capston-project
 ## Afrimeds: Digitalized Traditional Knowledge
 ### About the Project
