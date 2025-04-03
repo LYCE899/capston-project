@@ -56,6 +56,7 @@ cd afrimeds
 # 3. Install dependencies
 npm install
 
+
 ![image commencer](https://github.com/user-attachments/assets/8f8f97d4-154f-4a51-8baf-1b44a9a4dffc)
 ![creer compte image](https://github.com/user-attachments/assets/85a7e881-2db5-4ab5-8a5b-25400142e357)
 ![se conecter a sont comptes image](https://github.com/user-attachments/assets/2b096176-4048-4f7b-8911-6f8b52e276e2)
