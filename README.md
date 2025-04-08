@@ -57,6 +57,12 @@ Each plant has its own detailed page accessible by clicking on its entry in the 
 ![remedes page image](https://github.com/user-attachments/assets/67df45b2-9d82-4ffd-bf55-43000ae02218)
 ![auth1 image](https://github.com/user-attachments/assets/42cc141c-1972-44a7-88be-1925637366d0)
 ![data 1 image](https://github.com/user-attachments/assets/68c02fe8-a4ef-4db2-9f90-a0c660895a91)
- 
+
+ ## demo
+[first video](https://drive.google.com/file/d/1L-xQ1YzE7l86Sp0zeF4_fW-tFwgPGrjz/view?usp=sharing)
+
+## demo for Final version of the product/solution!
+[Watch the Afrimeds Demo Video](https://drive.google.com/file/d/1L-xQ1YzE7l86Sp0zeF4_fW-tFwgPGrjz/view?usp=sharing)
+
 ## Link to deployed app 
 [(https://projectafrimeds.web.app/)](https://projectafrimeds.web.app) 
