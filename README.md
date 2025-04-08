@@ -59,4 +59,4 @@ Each plant has its own detailed page accessible by clicking on its entry in the 
 ![data 1 image](https://github.com/user-attachments/assets/68c02fe8-a4ef-4db2-9f90-a0c660895a91)
  
 ## Link to deployed app 
-[https://capston-project-hb1n.vercel.app/](https://capston-project-hb1n.vercel.app/)
+[(https://projectafrimeds.web.app/)](https://projectafrimeds.web.app) 
