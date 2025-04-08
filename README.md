@@ -16,18 +16,14 @@ Afrimeds is an interactive and multilingual web application dedicated to documen
 - Firebase Firestore - NoSQL database to store Quizresults and comments
 
 ### Clone the repository to your local machine
-```bash
-git clone [(https://github.com/LYCE899/capston-project.git)]
+```bash git clone [(https://github.com/LYCE899/capston-project.git)]
 
-```bash
-cd afrimeds
+```bash cd afrimeds
 
  ### Install dependence 
-```bash
-   npm install
+```bash npm install
      
 ### Create a .env file at the root of the project with your Firebase information
-```bash
 - REACT_APP_FIREBASE_API_KEY=your-api-key
 - REACT_APP_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
 - REACT_APP_FIREBASE_PROJECT_ID=your-project-id
@@ -36,8 +32,7 @@ cd afrimeds
 - REACT_APP_FIREBASE_APP_ID=your-app-id
 
 ### Launch the application in development mode
-```bash
-npm run dev
+```bash npm run dev
 
 The application will be accessible at http://localhost:5173.
 
